@@ -263,7 +263,7 @@
 @stack('before_scripts_stack')
 @yield('before_scripts')
 
-<script src="{{ url('common/js/intl-tel-input/countries.js') . getPictureVersion() }}"></script>
+<script src="{{ asset('assets/plugins/intl-tel-input/data.js') . getPictureVersion() }}"></script>
 <script src="{{ url(mix('js/app.js')) }}"></script>
 @if (config('settings.optimization.lazy_loading_activation') == 1)
 	<script src="{{ url()->asset('assets/plugins/lazysizes/lazysizes.min.js') }}" async=""></script>
