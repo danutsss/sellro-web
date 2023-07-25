@@ -1,3 +1,4 @@
 .env
 .scribe/*
 vendor/*
+node_modules
