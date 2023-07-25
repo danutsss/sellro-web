@@ -33,5 +33,6 @@
 		"laravel-mix-workbox": "^0.1.4",
 		"popper.js": "^1.16.0",
 		"vue": "^2.6.11"
-	}
+	},
+    "type": "module"
 }
