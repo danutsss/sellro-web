@@ -1,5 +1,6 @@
 const mix = require("laravel-mix");
 const path = require("path");
+require("laravel-mix-workbox");
 
 /*
  |--------------------------------------------------------------------------
@@ -20,6 +21,41 @@ mix.sass("resources/sass/admin.scss", "public/css");
 
 mix.options({ processCssUrls: false });
 
+mix.generateSW({
+    // Set the path to the service-worker.js file.
+    swDest: path.join(`${__dirname}/public`, "service-worker.js"),
+
+    // Do not precache images
+    exclude: [
+        /\.(?:png|jpg|jpeg|svg)$/,
+        // Ignore the mix.js that's being generated
+        "mix.js",
+    ],
+
+    // Define runtime caching rules.
+    runtimeCaching: [
+        {
+            // Match any request that ends with .png, .jpg, .jpeg or .svg.
+            urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
+
+            // Apply a cache-first strategy.
+            handler: "CacheFirst",
+
+            options: {
+                // Use a custom cache name.
+                cacheName: "images",
+            },
+        },
+    ],
+
+    clientsClaim: true,
+
+    skipWaiting: true,
+});
+
+mix.injectManifest({
+    swSrc: path.join(`${__dirname}/resources/js`, "service-worker.js"),
+});
 /* Combine CSS */
 mix.combine(
     [
