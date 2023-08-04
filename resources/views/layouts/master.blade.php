@@ -31,8 +31,6 @@
 	<link rel="shortcut icon" href="{{ config('settings.app.favicon_url') }}">
 	<title>{!! MetaTag::get('title') !!}</title>
 
-    @laravelPWA
-
 	{!! MetaTag::tag('description') !!}{!! MetaTag::tag('keywords') !!}
 	<link rel="canonical" href="{{ request()->fullUrl() }}"/>
 	{{-- Specify a default target for all hyperlinks and forms on the page --}}
@@ -152,6 +150,7 @@
 			@endif
 		@endif
 	@show
+    @laravelPWA
 </head>
 <body class="skin">
 <div id="wrapper">
