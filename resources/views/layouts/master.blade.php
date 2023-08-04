@@ -30,6 +30,9 @@
 	<link rel="apple-touch-icon-precomposed" href="{{ $publicDisk->url('app/default/ico/apple-touch-icon-57-precomposed.png') . getPictureVersion() }}">
 	<link rel="shortcut icon" href="{{ config('settings.app.favicon_url') }}">
 	<title>{!! MetaTag::get('title') !!}</title>
+
+    @laravelPWA
+
 	{!! MetaTag::tag('description') !!}{!! MetaTag::tag('keywords') !!}
 	<link rel="canonical" href="{{ request()->fullUrl() }}"/>
 	{{-- Specify a default target for all hyperlinks and forms on the page --}}
