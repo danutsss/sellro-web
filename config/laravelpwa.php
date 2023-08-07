@@ -11,6 +11,7 @@ return [
         'display' => 'standalone',
         'orientation' => 'any',
         'status_bar' => 'black',
+        'description' => 'Vinde și cumpără inteligent - Simplu, rapid și eficient!',
         'icons' => [
             '72x72' => [
                 'path' => '/images/icons/icon-72x72.png',
@@ -57,35 +58,7 @@ return [
             '1668x2388' => '/images/icons/splash-1668x2388.png',
             '2048x2732' => '/images/icons/splash-2048x2732.png',
         ],
-        'shortcuts' => [
-            [
-                'name' => 'Prima pagina',
-                'description' => 'Pagina principala',
-                'url' => '/',
-                'icons' => [
-                    "src" => "/images/icons/icon-72x72.png",
-                    "purpose" => "any"
-                ]
-            ],
-            [
-                'name' => 'Profilul meu',
-                'description' => 'Setari profil',
-                'url' => '/account',
-                'icons' => [
-                    "src" => "/images/icons/icon-72x72.png",
-                    "purpose" => "any"
-                ]
-            ],
-            [
-                'name' => 'Posteaza anunt',
-                'description' => 'Creeaza anunt',
-                'url' => '/posts/create',
-                'icons' => [
-                    "src" => "/images/icons/icon-72x72.png",
-                    "purpose" => "any"
-                ]
-            ]
-        ],
+        'shortcuts' => [],
         'custom' => []
     ]
 ];
